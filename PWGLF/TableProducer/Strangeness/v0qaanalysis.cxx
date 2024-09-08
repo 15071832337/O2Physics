@@ -74,7 +74,6 @@ struct LfV0qaanalysis {
     registry.get<TH1>(HIST("hNEvents"))->GetXaxis()->SetBinLabel(7, "isTOFVertexMatched");
     registry.get<TH1>(HIST("hNEvents"))->GetXaxis()->SetBinLabel(8, "isGoodZvtxFT0vsPV");
     registry.get<TH1>(HIST("hNEvents"))->GetXaxis()->SetBinLabel(9, "Applied selected");
-    
 
     registry.add("hCentFT0M", "hCentFT0M", {HistType::kTH1F, {{1000, 0.f, 100.f}}});
     registry.add("hCentFV0A", "hCentFV0A", {HistType::kTH1F, {{1000, 0.f, 100.f}}});
@@ -135,7 +134,6 @@ struct LfV0qaanalysis {
     }
     registry.fill(HIST("hNEvents"), 1.5);
 
-
     if (isTriggerTVX && !collision.selection_bit(aod::evsel::kIsTriggerTVX)) {
       return false;
     }
@@ -165,8 +163,6 @@ struct LfV0qaanalysis {
     }
     registry.fill(HIST("hNEvents"), 7.5);
 
-
-    
     return true;
   }
 
