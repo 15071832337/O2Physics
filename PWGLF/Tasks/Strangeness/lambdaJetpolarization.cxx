@@ -9,9 +9,9 @@
 // granted to it by virtue of its status as an Intergovernmental Organization
 // or submit itself to any jurisdiction.
 ///
-/// \brief Step4 of the Strangeness tutorial
-/// \author Nepeivoda Roman (roman.nepeivoda@cern.ch)
-/// \author Chiara De Martin (chiara.de.martin@cern.ch)
+
+/// \author Youpeng Su (yousu@cern.ch)
+
 
 #include "Framework/runDataProcessing.h"
 #include "Framework/AnalysisTask.h"
@@ -19,18 +19,12 @@
 #include "PWGLF/DataModel/LFStrangenessTables.h"
 #include "Common/DataModel/PIDResponse.h"
 #include "Framework/O2DatabasePDGPlugin.h"
-
-// relation with Jet
-#include "PWGJE/Core/JetDerivedDataUtilities.h"
-// #include "PWGJE/Core/FastJetUtilities.h"
 #include "PWGJE/Core/JetDerivedDataUtilities.h"
 #include "PWGJE/DataModel/Jet.h"
-
 #include <TLorentzVector.h>
 
 using std::cout;
 using std::endl;
-
 using namespace o2;
 using namespace o2::framework;
 using namespace o2::framework::expressions;
@@ -194,9 +188,6 @@ struct myAnalysis {
       registry.get<TH1>(HIST("hNEventsJet"))->GetXaxis()->SetBinLabel(2, "zvertex");
       registry.get<TH1>(HIST("hNEventsJet"))->GetXaxis()->SetBinLabel(3, "JCollisionSel::sel8");
     }
-
-    // registry.add("InvMassK0S", "InvMassK0S", {HistType::kTH1F, {{200, 0.4f, 0.6f}}});
-
     registry.add("hV0NEvents", "hV0NEvents", kTH1F, {{1, 0, 1}});
 
     eventSelection = jetderiveddatautilities::initialiseEventSelection(static_cast<std::string>(cfgeventSelections));
@@ -516,8 +507,6 @@ struct myAnalysis {
     }
 
     JEhistos.fill(HIST("nJetsPerEvent"), nJets);
-
-    //}
   }
   PROCESS_SWITCH(myAnalysis, processJetTracks, "process JE Framework", true);
   int nEventsV0 = 0;
