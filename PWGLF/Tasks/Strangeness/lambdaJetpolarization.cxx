@@ -12,7 +12,6 @@
 
 /// \author Youpeng Su (yousu@cern.ch)
 
-
 #include "Framework/runDataProcessing.h"
 #include "Framework/AnalysisTask.h"
 #include "Common/DataModel/EventSelection.h"
