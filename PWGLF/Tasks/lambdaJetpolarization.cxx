@@ -1056,7 +1056,7 @@ struct LfMyV0s {
 
         double AntiprotonCosThetainJetV0 = AntiprotonInJetV0(3, 0) / AntiprotonPinJetV0;
         double AntiprotonSinThetainJetV0 = AntiprotonPtinJetV0 / AntiprotonPinJetV0;
-       
+
         registryData.fill(HIST("TProfile2DAntiLambdaPtMassSintheta"), candidate.mAntiLambda(), candidate.pt(), AntiprotonSinThetainJetV0);
         registryData.fill(HIST("TProfile2DAntiLambdaPtMassCosSquareTheta"), candidate.mAntiLambda(), candidate.pt(), AntiprotonCosThetainJetV0 * AntiprotonCosThetainJetV0);
       }
