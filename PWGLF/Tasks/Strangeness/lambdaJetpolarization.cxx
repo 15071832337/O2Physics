@@ -469,7 +469,6 @@ struct LfMyV0s {
   }
   // aod::MyCollision const& collision
 
-  
   void processJetV0Analysis(aod::MyTable const& myv0s, aod::MyTableJet const& myJets)
   {
 
