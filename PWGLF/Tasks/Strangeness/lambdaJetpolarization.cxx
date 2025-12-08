@@ -35,7 +35,7 @@
 #include "Math/Vector4D.h"
 #include "TProfile2D.h"
 #include <TFile.h>
-//#include <TLorentzVector.h>
+// #include <TLorentzVector.h>
 #include <TMatrixD.h>
 #include <TTree.h>
 
@@ -1990,6 +1990,6 @@ struct lambdaJetpolarization {
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 {
   return WorkflowSpec{
-    adaptAnalysisTask<lambdaJetpolarization>(cfgc),// TaskName{"lf-my-v0s"}
+    adaptAnalysisTask<lambdaJetpolarization>(cfgc), // TaskName{"lf-my-v0s"}
   };
 }
